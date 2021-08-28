@@ -93,7 +93,7 @@
 
       <h5 class="bg-light p-2 mt-3">Pilih Gejala yang Anda Rasakan</h5>
       <?php
-        $token    = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Iml0cy5kYWlzeS5vbmVAZ21haWwuY29tIiwicm9sZSI6IlVzZXIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiI2OTA4IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy92ZXJzaW9uIjoiMTA5IiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9saW1pdCI6IjEwMCIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcCI6IkJhc2ljIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9sYW5ndWFnZSI6ImVuLWdiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9leHBpcmF0aW9uIjoiMjA5OS0xMi0zMSIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcHN0YXJ0IjoiMjAyMS0wOC0xMSIsImlzcyI6Imh0dHBzOi8vYXV0aHNlcnZpY2UucHJpYWlkLmNoIiwiYXVkIjoiaHR0cHM6Ly9oZWFsdGhzZXJ2aWNlLnByaWFpZC5jaCIsImV4cCI6MTYyODk0OTU3NywibmJmIjoxNjI4OTQyMzc3fQ.IkPA0inn_8O6dpieioph0m4jiamvFoP_maxRMojNAYc";
+        $token    = "";
         $format   = "json";
         $language = "en-gb";
         $url      = "https://healthservice.priaid.ch/symptoms?token=$token&format=$format&language=$language";
@@ -151,7 +151,7 @@
                   "url": "https://just-translated.p.rapidapi.com/?lang=id&text=<?= str_replace(" ","%20",$gejala["Name"]); ?>",
                   "method": "GET",
                   "headers": {
-                    "x-rapidapi-key": "871873423emshf8ad899b6cd992cp1870f4jsnf5fb5885bc9e",
+                    "x-rapidapi-key": "",
                     "x-rapidapi-host": "just-translated.p.rapidapi.com"
                   }
                 };
@@ -167,7 +167,7 @@
                   var umur = $("input[id='age']").val();
                   $('.jenis').val(jenis);
                   $('.umur').val(umur);
-                  var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Iml0cy5kYWlzeS5vbmVAZ21haWwuY29tIiwicm9sZSI6IlVzZXIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiI2OTA4IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy92ZXJzaW9uIjoiMTA5IiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9saW1pdCI6IjEwMCIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcCI6IkJhc2ljIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9sYW5ndWFnZSI6ImVuLWdiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9leHBpcmF0aW9uIjoiMjA5OS0xMi0zMSIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcHN0YXJ0IjoiMjAyMS0wOC0xMSIsImlzcyI6Imh0dHBzOi8vYXV0aHNlcnZpY2UucHJpYWlkLmNoIiwiYXVkIjoiaHR0cHM6Ly9oZWFsdGhzZXJ2aWNlLnByaWFpZC5jaCIsImV4cCI6MTYyODk1MDA4NywibmJmIjoxNjI4OTQyODg3fQ.DipfqEQ1TRmPQQ_1ruWAITYXrXBsbylqACh9tJRnXSo";
+                  var token = "";
                   var symp  = <?= $gejala["ID"]; ?>;
                   if(jenis  = "Laki-Laki") {
                     var gen = "male";
@@ -184,13 +184,13 @@
                       method: 'GET',
                     };
                     /* get hasil Geoapify API untuk mengetahui lokasi serta kategori rs terdekat */
-                    fetch(`https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=rect:${long-0.2},${lat-0.2},${long+0.2},${lat+0.2}&lang=en&limit=10&apiKey=eb32470baa61438e867c34c2bbcc1c7f`, requestOptions)
+                    fetch(`https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=rect:${long-0.2},${lat-0.2},${long+0.2},${lat+0.2}&lang=en&limit=10&apiKey=`, requestOptions)
                     .then(response => response.json()).then((result) => { /* jika ada response */
                       /* get style dari Geoapify API ke MapBox GL JS API */
-                      mapboxgl.accessToken = 'pk.eyJ1IjoiZGVhMTAiLCJhIjoiY2tzOWFwdnlxMHNyaTMxcGU5NnBnaWhtNCJ9.m9atsKQbdp-Vg5a5DMPlMw';
+                      mapboxgl.accessToken = '';
                       const map = new mapboxgl.Map({
                         container: 'map<?= $gejala["ID"]; ?>',
-                        style: 'https://maps.geoapify.com/v1/styles/osm-bright/style.json?apiKey=eb32470baa61438e867c34c2bbcc1c7f',
+                        style: 'https://maps.geoapify.com/v1/styles/osm-bright/style.json?apiKey=',
                         center: [long, lat], 
                         zoom: 9
                       });
@@ -225,7 +225,7 @@
                           "url": `https://just-translated.p.rapidapi.com/?lang=id&text=${data.Name}`,
                           "method": "GET",
                           "headers": {
-                            "x-rapidapi-key": "871873423emshf8ad899b6cd992cp1870f4jsnf5fb5885bc9e",
+                            "x-rapidapi-key": "",
                             "x-rapidapi-host": "just-translated.p.rapidapi.com"
                           }
                         };
